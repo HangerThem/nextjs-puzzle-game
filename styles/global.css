@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #eee;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+.timer {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  width: fit-content;
+  min-width: 325px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: fit-content;
+  height: fit-content;
+}
+
+.grid-square {
+  height: 80px;
+  width: 77.5px;
+
+  &.dark {
+    background-color: #222;
+  }
+
+  &.light {
+    background-color: #292929;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  border: none;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  background-color: #222;
+  color: #eee;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &.inactive {
+    opacity: 0.5;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.danger {
+    background-color: #c0392b;
+
+    &:hover {
+      background-color: #e74c3c;
+    }
+  }
+
+  &.success {
+    background-color: #27ae60;
+
+    &:hover {
+      background-color: #2ecc71;
+    }
+  }
+
+  &.warning {
+    background-color: #f39c12;
+
+    &:hover {
+      background-color: #f1c40f;
+    }
+  }
+
+  &.info {
+    background-color: #2980b9;
+
+    &:hover {
+      background-color: #3498db;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #222;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: #222;
+    }
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+}
+
+.piece-holder {
+  height: 400px;
+  width: 450px;
+  gap: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #222;
+  padding: 10px;
+}
+
+.puzzle {
+  height: 80px;
+  width: 77.5px;
+  background-size: cover;
+  box-sizing: border-box;
+  cursor: move;
+  opacity: 1;
+}
+
+.solved-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .final-time {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #eee;
+  }
+
+  .solved-image {
+    height: 600px;
+    width: auto;
+  }
+}
